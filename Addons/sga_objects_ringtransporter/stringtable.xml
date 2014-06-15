@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="Stargate ArmA">
+	<Package name="sga_ringtransporter">
+		<Key ID="STR_SGA_RT_AITORINGS">
+			<Original>Call AI to rings</Original>
+			<German>KI zu den Ringen rufen</German>
+		</Key>
+		<Key ID="STR_SGA_RT_TELEPORTTO">
+			<Original>Teleport to %1</Original>
+			<German>Zu Ring %1 teleportieren</German>
+		</Key>
+		<Key ID="STR_SGA_RT_TRNOTPOSSIBLE">
+			<Original>Transport not possible. Someone is using the destination ring right now!</Original>
+			<German>Transporter nicht bereit, er wird gerade benutzt</German>
+		</Key>
+	</Package>
+</Project>
