@@ -6,7 +6,8 @@
  */
 
  // Debug
-diag_log format["#SGA Ringtransporter (SGA_rt) geladen: %1", _this];
+sga_debug = true; 
+if (sga_debug) then { diag_log format["#SGA Ringtransporter (SGA_rt) geladen: %1", _this]; };
 
 
 if(isnil "SGA_rt_init") then {
@@ -17,7 +18,6 @@ if(isnil "SGA_rt_init") then {
 	
 	// VARS
 	SGA_rt_init = true;
-	SGA_rt_rings_initialized = false;	
 	SGA_rt_rings_array = [];
 	SGA_rt_rings_inuse = [];
 	SGA_rt_rings_brokenconnections = [];
@@ -26,7 +26,7 @@ if(isnil "SGA_rt_init") then {
 	SGA_rt_blacklist = ["sga_ringtransporter_rings_basic"];
 
 	// diesen Transporter eintragen
-	SGA_rt_rings_array set [0, _this];
+	SGA_rt_rings_array set [0, _this select 0];
 
 	// Non-dedicated Server machines (Clients + JIP-Clients + Client-Host)
 	if(!(isServer && isNull player)) then 
@@ -51,6 +51,5 @@ if(isnil "SGA_rt_init") then {
 	if(isServer) then {
 		(_this select 0) setDir 0;
 	};
-	waitUntil{ SGA_rt_rings_initialized };
-	SGA_rt_rings_array set [count SGA_rt_rings_array, [_this]];
+	SGA_rt_rings_array set [count SGA_rt_rings_array, _this select 0];
 };

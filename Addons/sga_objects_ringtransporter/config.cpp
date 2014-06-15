@@ -209,6 +209,7 @@ class CfgFunctions
 			
 			class playerActions {};
 			class getRingName {};
+			class teleport {};
 		};
 		
 		class sga_objects_rings_f_transport

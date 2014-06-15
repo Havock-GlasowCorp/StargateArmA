@@ -3,6 +3,8 @@ private ["_who","_SG_rings_invalidData","_arguments","_ringin","_ringout",
 
 _SG_rings_invalidData = false;
 
+if (sga_debug) then { diag_log format ["### fn_teleport.sqf | _this: %1", _this]; };
+
 _who = _this select 0;
 _arguments = [];
 
@@ -17,7 +19,6 @@ if(typeName _who == "ARRAY") then {
 	}; 
 };
 if(_SG_rings_invalidData) exitWith {true};
-
 
 _ringin = _arguments select 0;
 _ringout = _arguments select 1;
@@ -49,7 +50,7 @@ if(isDedicated) then {
 	_tmp = [_ringin, _ringout] call sga_ringtransporter_fnc_srv_begin;
 	sleep 4.6;
 	// wieder austragen aus inuse
-	SGA_rt_rings_inuse = SGA_rt_rings_inuse - [_ringin, _ringout]];
+	SGA_rt_rings_inuse = SGA_rt_rings_inuse - [_ringin, _ringout];
 
 } else {
 
@@ -62,7 +63,7 @@ if(isDedicated) then {
 	sleep 1.0;
 	
 	// wieder austragen aus inuse
-	SGA_rt_rings_inuse = SGA_rt_rings_inuse - [_ringin, _ringout]];	
+	SGA_rt_rings_inuse = SGA_rt_rings_inuse - [_ringin, _ringout];	
 	SGA_rt_rings_AI = false; // AI nimmer drinne
 	
 	sleep 3.0;
