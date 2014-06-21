@@ -4,6 +4,6 @@ StargateArmA
 Stargate ArmA - Content Modification
 
 
-project home: www.stargatearma.com
+project home: http://www.stargatearma.com
 
-bugtracker: bugtracker.tdc-clan.eu
+bugtracker: http://bugtracker.tdc-clan.eu
